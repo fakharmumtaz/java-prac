@@ -1,6 +1,7 @@
 package com.gen.profile.demo.controller;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +13,13 @@ public class ProfileController {
 
     @PostConstruct
     public void show(){
-        System.out.println("message : "+ message);
+        System.out.println("Post Construct message : "+ message);
+
+    }
+
+    @PreDestroy
+    public void show1(){
+        System.out.println("PreDestroy message : "+ message);
 
     }
 }
