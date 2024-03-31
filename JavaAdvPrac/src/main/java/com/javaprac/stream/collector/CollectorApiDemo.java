@@ -2,6 +2,9 @@ package com.javaprac.stream.collector;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CollectorApiDemo {
@@ -19,6 +22,15 @@ public class CollectorApiDemo {
         var count = listOfInt.stream().filter(CollectorApiDemo::isEven).count();
         System.out.println("count=" + count);
 
+        var count1 = listOfInt.stream().filter(CollectorApiDemo::isEven)
+                .map(CollectorApiDemo::doubleIt).count();
+        System.out.println("count=" + count1);
+
+        Predicate<? super T> mmmmms = ;
+        listOfInt.stream().filter(CollectorApiDemo::isEven)
+                .map(CollectorApiDemo::doubleIt).collect(Collectors.filtering(mmmmms));
+        System.out.println("count=" + count1);
+
     }
 
      private static boolean isEven(int e){
@@ -26,6 +38,6 @@ public class CollectorApiDemo {
      }
 
     private static Integer doubleIt(int e){
-        return 3 * 2;
+        return e * 2;
     }
 }
