@@ -2,7 +2,6 @@ package com.javaprac.opt;
 
 import java.util.List;
 import java.util.Optional;
-// https://depthinjava.blogspot.com/2023/01/api-javautiloptional-what-is-optional.html
 public class Sample {
     public static void main(String[] args) {
         List<Customer> customers = getCustomers();
